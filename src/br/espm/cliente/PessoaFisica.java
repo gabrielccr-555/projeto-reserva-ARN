@@ -4,7 +4,7 @@ public class PessoaFisica extends Cliente {
     private Long cpf;
 
     public PessoaFisica(String nome, String contato, Long cpf) {
-        super(nome, contato); // super --> Chamada do construtor da superclasse para inicializar os atributos
+        super(nome, contato); // super --> Chamada do construtor da SuperClasse para inicializar os atributos
         this.cpf = cpf;
     }
 
@@ -21,7 +21,4 @@ public class PessoaFisica extends Cliente {
     public void setCpf(Long cpf) {
         this.cpf = cpf;
     }
-
-
-
 }
