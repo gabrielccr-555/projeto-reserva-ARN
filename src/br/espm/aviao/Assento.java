@@ -9,4 +9,22 @@ public class Assento {
     this.numAssento = numAssento;
     this.disponivel = true;
   }
+
+  public boolean isDisponivel() {
+    return disponivel;
+  }
+
+  public int getNumAssento() {
+    return numAssento;
+  }
+
+  public void setDisponivel(boolean disponivel) {
+    this.disponivel = disponivel;
+  }
+
+  public void setNumAssento(int numAssento) {
+    this.numAssento = numAssento;
+  }
+
+  
 }

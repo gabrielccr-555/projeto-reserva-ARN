@@ -9,7 +9,7 @@ public class Reserva {
     private double valorFinal;
     private double valorOriginal;
 
-    public Reserva(Cliente cliente, double valorOriginal, Assento assento) {
+    public Reserva(Cliente cliente, Assento assento, double valorOriginal) {
         this.cliente = cliente;
         this.assento = assento;
         this.valorOriginal = valorOriginal;
