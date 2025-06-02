@@ -8,6 +8,11 @@ public class PessoaFisica extends Cliente {
         this.cpf = cpf;
     }
 
+    public PessoaFisica(Long identificador) {
+        // Precisa chamar o construtor da super classe.
+        this(null, null, identificador);
+    }
+
     // Para implementar o método abstrato usamos a sobrecarga de método --> @Override
     @Override
     public Long getIdentificador() {

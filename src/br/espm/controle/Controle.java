@@ -6,6 +6,7 @@ import br.espm.cliente.PessoaJuridica;
 import br.espm.aviao.Reserva;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
@@ -70,8 +71,23 @@ public class Controle {
     private void cancelar() {
     }
 
+    // Contains utiliza internamente o equals
     private void pesquisar() {
-        
+        Long identificador = Long.valueOf(showInputDialog("CPF/CNPJ"));
+        Reserva reserva = new Reserva(identificador);
+        showMessageDialog(null, listaReserva.contains(reserva));
+
+        // Consigo através do laço retornar o objeto --> Para remoção um for não é o ideal
+        // for (Reserva r : listaReserva) {
+
+        // }
+
+        // O Iterator é para processos que envolvem concorrência --> Quando há busca e inservção numa lista simultaneamente
+        // Faz uma cópia sofisticada da nossa árvore
+        // Iterator<Reserva> it = listaReserva.iterator();
+        // while (it.hasNext()) {
+
+        // }
     }
 
     private void reservar() {
@@ -86,7 +102,7 @@ public class Controle {
         
     }
 
-    // Se fosse tipo primitivo usariamos ==, mas não é, é Long
+    // Se fosse tipo primitivo usariamos ==, mas não é, é Long, emtão usamos equals.
     // Aqui fazemos um for pelo objeto
     private Cliente pesquisarCliente(Long identificador) {
         for (Cliente cliente : listaCliente) {
@@ -101,8 +117,8 @@ public class Controle {
     // Aqui temos um for que controla índice da lista
     private String listarAssento() {
         String aux = "";
-        for (int i = 0; i < listaAssento.size(); i++) {
-            aux += "Assento: " + (i + 1) + " ---> ";
+        for (int i = 1; i < listaAssento.size(); i++) {
+            aux += "Assento: " + (i) + " ---> ";
             aux += listaAssento.get(i).isDisponivel() ? "Disponível" : "Indisponível";
             aux += "\n";
         }
